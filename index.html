@@ -1,191 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TemperaturePro Austin – HVAC Services in Austin, TX</title>
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --surface-color: #f0fdf4;
-            --text-color: #1a1a1a;
-            --accent-color: #059669;
-            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: var(--font-stack);
-            background: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        a { color: var(--accent-color); text-decoration: none; }
-        header {
-            background: var(--surface-color);
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-color);
-        }
-        .contact-info {
-            font-size: 0.9rem;
-        }
-        .hero {
-            background: var(--accent-color);
-            color: #fff;
-            text-align: center;
-            padding: 4rem 1rem;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-        .hero .cta {
-            background: #fff;
-            color: var(--accent-color);
-            border: none;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-        .hero .cta:hover {
-            background: #e0e0e0;
-        }
-        section {
-            padding: 3rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            color: var(--accent-color);
-        }
-        .grid {
-            display: grid;
-            gap: 1.5rem;
-        }
-        @media (min-width: 600px) {
-            .grid-2 { grid-template-columns: repeat(2, 1fr); }
-            .grid-3 { grid-template-columns: repeat(3, 1fr); }
-        }
-        .card {
-            background: var(--surface-color);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        }
-        .card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
-        .highlights ul,
-        .services ul,
-        .certifications ul {
-            list-style: none;
-        }
-        .highlights li,
-        .services li,
-        .certifications li {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        .highlights li::before,
-        .services li::before,
-        .certifications li::before {
-            content: "✓";
-            color: var(--accent-color);
-            margin-right: 0.5rem;
-            font-weight: bold;
-        }
-        footer {
-            background: var(--surface-color);
-            text-align: center;
-            padding: 2rem 1rem;
-            font-size: 0.9rem;
-        }
-        .footer-links a {
-            margin: 0 0.5rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TemperaturePro Austin – Expert HVAC services in Austin, TX. AC & heating installation, smart thermostats, energy audits, financing, and free consultations.">
+  <title>TemperaturePro Austin – HVAC Services</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f0fdf4;
+      --text: #1a1a1a;
+      --accent: #059669;
+      --font: 'Arial', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent);
+      color: #fff;
+      padding: 8px 16px;
+      z-index: 100;
+    }
+    .skip-link:focus { top: 0; }
+    header {
+      background: var(--surface);
+      padding: 1rem 2rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav a { font-weight: bold; }
+    .hero {
+      background: var(--accent);
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: .5rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .hero .cta {
+      background: #fff;
+      color: var(--accent);
+      border: none;
+      padding: .75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .hero .cta:hover { background: #e6e6e6; }
+    main { padding: 2rem; }
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+    .services, .highlights, .certifications {
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    .services h2,
+    .highlights h2,
+    .certifications h2 {
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .services ul,
+    .highlights ul,
+    .certifications ul {
+      list-style: none;
+      display: grid;
+      gap: .5rem;
+    }
+    .services li::before,
+    .highlights li::before,
+    .certifications li::before {
+      content: "✔";
+      margin-right: .5rem;
+      color: var(--accent);
+    }
+    .contact {
+      margin-top: 2rem;
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    .contact h2 { margin-bottom: 1rem; color: var(--accent); }
+    .contact form {
+      display: grid;
+      gap: 1rem;
+    }
+    .contact label { display: block; font-weight: bold; margin-bottom: .25rem; }
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: .5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .contact button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: .75rem 1.5rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .contact button:hover { background: #047857; }
+    footer {
+      background: var(--surface);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: .9rem;
+    }
+    @media (min-width: 768px) {
+      .grid-3col {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .hero h1 { font-size: 3rem; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">TemperaturePro Austin</div>
-        <div class="contact-info">
-            <div>Phone: <a href="tel:+15125678901">(512) 567-8901</a></div>
-            <div>Email: <a href="mailto:info@temperaturepro.com">info@temperaturepro.com</a></div>
-        </div>
-    </header>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header>
+    <div class="logo"><strong>TemperaturePro Austin</strong></div>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#highlights">Why Choose Us</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="hero">
-        <h1>Comfort & Efficiency for Austin Homes</h1>
-        <p>Expert HVAC installation, smart thermostats, and energy solutions.</p>
-        <button class="cta" onclick="location.href='tel:+15125678901'">Call Now (512) 567-8901</button>
+  <section class="hero">
+    <h1>Stay Comfortable All Year Round</h1>
+    <p>Expert HVAC installation, smart thermostats, and energy audits for Austin homes.</p>
+    <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Schedule Free Consultation</button>
+  </section>
+
+  <main id="main">
+    <section id="services" class="services grid">
+      <h2>Our Services</h2>
+      <ul class="grid-3col">
+        <li>AC Installation</li>
+        <li>Heating Installation</li>
+        <li>Smart Thermostats</li>
+        <li>Energy Audits</li>
+      </ul>
     </section>
 
-    <section class="services">
-        <h2 class="section-title">Our Services</h2>
-        <div class="grid grid-2">
-            <div class="card">
-                <h3>AC Installation</h3>
-                <p>High‑efficiency air conditioning systems tailored to your home.</p>
-            </div>
-            <div class="card">
-                <h3>Heating Installation</h3>
-                <p>Reliable heating solutions for year‑round comfort.</p>
-            </div>
-            <div class="card">
-                <h3>Smart Thermostats</h3>
-                <p>Control your climate from anywhere and save energy.</p>
-            </div>
-            <div class="card">
-                <h3>Energy Audits</h3>
-                <p>Identify savings opportunities and improve home efficiency.</p>
-            </div>
-        </div>
+    <section id="highlights" class="highlights grid">
+      <h2>Why Choose TemperaturePro</h2>
+      <ul class="grid-3col">
+        <li>Energy Star Partner</li>
+        <li>Financing Available</li>
+        <li>Free Consultations</li>
+        <li>Tax Credits</li>
+      </ul>
     </section>
 
-    <section class="highlights">
-        <h2 class="section-title">Why Choose Us</h2>
-        <div class="grid grid-2">
-            <div class="card">
-                <ul>
-                    <li>Energy Star Partner</li>
-                    <li>Financing Available</li>
-                    <li>Free Consultations</li>
-                    <li>Tax Credits</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Certifications</h3>
-                <ul>
-                    <li>Energy Star Certified</li>
-                    <li>NATE Certified</li>
-                </ul>
-            </div>
-        </div>
+    <section id="certifications" class="certifications grid">
+      <h2>Our Certifications</h2>
+      <ul class="grid-3col">
+        <li>Energy Star Certified</li>
+        <li>NATE Certified</li>
+      </ul>
     </section>
 
-    <footer>
-        <p>&copy; 2026 TemperaturePro Austin. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="tel:+15125678901">(512) 567-8901</a> |
-            <a href="mailto:info@temperaturepro.com">info@temperaturepro.com</a>
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p>Phone: <a href="tel:+15125678901">(512) 567-8901</a><br>
+         Email: <a href="mailto:info@temperaturepro.com">info@temperaturepro.com</a></p>
+      <form action="#" method="post">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
         </div>
-    </footer>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 TemperaturePro Austin. All rights reserved.
+  </footer>
 </body>
 </html>
