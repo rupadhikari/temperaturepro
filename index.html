@@ -3,520 +3,278 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Energy-efficient HVAC solutions in Austin, TX. AC, heating, smart thermostats, and energy audits.">
-<title>TemperaturePro Austin – Efficiency You Can Trust</title>
+<meta name="description" content="Energy Star Partner HVAC service in Austin. Smart thermostat installs, energy audits, high-efficiency systems. Free consultation.">
+<title>TemperaturePro – Efficiency You Can Trust</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #ffffff;
   --surface: #f0fdf4;
   --accent: #059669;
+  --accent-dark: #047857;
+  --accent-light: #d1fae5;
   --text: #1a1a1a;
-  --font: 'Inter', system-ui, sans-serif;
+  --text-muted: #4b5563;
+  --border: #e5e7eb;
+  --font-heading: 'DM Sans', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-a.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--accent);
-  color: #000;
-  padding: 8px;
-  z-index: 10000;
-  text-decoration: none;
-  font-weight: 600;
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+a.skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: #fff; padding: 10px 16px; z-index: 10000; text-decoration: none; font-weight: 600; font-size: 0.875rem; }
 a.skip-link:focus { top: 0; }
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(20,20,20,0.92);
-  backdrop-filter: blur(12px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem clamp(1.5rem, 4vw, 3rem);
+  display: flex; justify-content: space-between; align-items: center;
 }
-.logo {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: -0.02em;
-}
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  margin-left: 2rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-nav a:hover { color: var(--accent); }
-.phone-cta {
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.phone-cta:hover {
-  background: var(--accent);
-  color: #000;
-}
+.logo { font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: var(--accent); letter-spacing: -0.02em; }
+nav { display: flex; gap: clamp(1.5rem, 3vw, 2.5rem); }
+nav a { color: var(--text); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.2s; position: relative; }
+nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s; }
+nav a:hover { color: var(--accent); } nav a:hover::after { width: 100%; }
+.phone-cta { background: var(--accent); color: #fff; padding: 0.625rem 1.25rem; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 14px rgba(5,150,105,0.3); }
+.phone-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
 main { width: 100%; }
 
 .hero {
   position: relative;
-  min-height: clamp(500px, 90vh, 800px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 6rem 2rem 4rem;
+  min-height: clamp(550px, 85vh, 750px);
+  display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+  padding: clamp(4rem, 10vw, 6rem) clamp(1.5rem, 4vw, 3rem);
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%),
-    url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.98) 100%),
+    url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+.hero-content { position: relative; z-index: 1; max-width: 900px; opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent-light); border: 1px solid var(--accent);
+  padding: 0.5rem 1.25rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600;
+  color: var(--accent); margin-bottom: 1.5rem;
 }
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  animation: fadeInUp 0.8s ease-out;
-}
+.hero-badge::before { content: '✓'; font-weight: 700; }
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
 }
+.hero h1 span { color: var(--accent); }
 .hero p {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  opacity: 0.85;
-  margin-bottom: 2.5rem;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 65ch;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
 }
-.cta-group {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+.cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 .btn-primary {
-  background: var(--accent);
-  color: #000;
-  padding: 1rem 2rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: var(--accent); color: #fff;
+  padding: 1rem 2rem; font-weight: 600; border: none; border-radius: 6px;
+  cursor: pointer; text-decoration: none; display: inline-block; font-size: 1rem;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(5,150,105,0.35); }
 .btn-secondary {
-  background: transparent;
-  color: var(--accent);
+  background: transparent; color: var(--accent);
   border: 2px solid var(--accent);
-  padding: 1rem 2rem;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.2s;
+  padding: 1rem 2rem; font-weight: 600; border-radius: 6px;
+  cursor: pointer; text-decoration: none; display: inline-block; font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
 }
-.btn-secondary:hover {
-  background: var(--accent);
-  color: #000;
-}
+.btn-secondary:hover { background: var(--accent); color: #fff; }
 
-section {
-  padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem);
-  max-width: 1200px;
-  margin: 0 auto;
+section { padding: clamp(3.5rem, 7vw, 5.5rem) clamp(1.5rem, 4vw, 3rem); max-width: 1200px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+.section-label {
+  display: inline-block; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
 }
 .section-title {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
-  margin-bottom: 2rem;
-  text-align: center;
+  line-height: 1.25;
 }
 
 .stats-bar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  padding: 2.5rem 0; margin: 0 auto 2rem;
+  max-width: 1000px;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
 }
-.stat {
-  text-align: center;
-  padding: 1rem;
-}
-.stat-value {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-top: 0.3rem;
-}
+@media (max-width: 768px) { .stats-bar { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .stats-bar { grid-template-columns: 1fr; } }
+.stat { text-align: center; padding: 0 1.5rem; position: relative; }
+.stat:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 25%; height: 50%; width: 1px; background: var(--border); }
+.stat-value { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: var(--accent); line-height: 1; }
+.stat-label { font-size: 0.875rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 500; }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-}
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
 .service-card {
-  background: var(--surface);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: transform 0.2s, border-color 0.2s;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
+  padding: 2rem; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  display: flex; flex-direction: column; height: 100%;
 }
-.service-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-}
-.service-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.service-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-}
-.service-card p {
-  opacity: 0.8;
-  font-size: 0.95rem;
-}
+.service-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 16px 32px rgba(5,150,105,0.1); }
+.service-icon { width: 56px; height: 56px; border-radius: 14px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem; color: var(--accent); }
+.service-card h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; margin-bottom: 0.625rem; }
+.service-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; flex-grow: 1; }
 
-.highlights {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+.why-choose {
+  background: linear-gradient(180deg, rgba(5,150,105,0.04) 0%, transparent 100%);
+  border-radius: 16px; padding: 3.5rem 2.5rem; margin: 2rem auto;
 }
-.highlight {
-  text-align: center;
-  padding: 1.5rem;
-}
-.highlight-icon {
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
-}
-.highlight h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.4rem;
-}
-.highlight p {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+.why-item { text-align: center; }
+.why-icon { width: 56px; height: 56px; margin: 0 auto 1rem; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--accent); }
+.why-item h4 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+.why-item p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
 
-.why-us {
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 3rem 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+.savings-teaser {
+  background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%); border: 2px dashed var(--accent);
+  border-radius: 16px; padding: 3rem 2rem; text-align: center; margin: 2rem auto;
 }
-.why-item {
-  text-align: center;
-}
-.why-item .icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.why-item h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: var(--accent);
-}
-.why-item p {
-  opacity: 0.85;
-}
+.savings-teaser h2 { font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.25rem); font-weight: 700; color: var(--accent-dark); margin-bottom: 0.75rem; }
+.savings-teaser p { color: var(--text-muted); max-width: 55ch; margin: 0 auto 1.5rem; }
+.savings-teaser .btn-primary { background: var(--accent-dark); }
 
-.contact-section {
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 3rem 2rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.contact-form input,
-.contact-form textarea {
-  padding: 1rem;
-  background: rgba(0,0,0,0.2);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  color: var(--text);
-  font-family: var(--font);
-  font-size: 1rem;
-  transition: border-color 0.2s;
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-.contact-form button[type="submit"] {
-  background: var(--accent);
-  color: #000;
-  padding: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: transform 0.2s;
-}
-.contact-form button[type="submit"]:hover {
-  transform: translateY(-2px);
-}
+.cta-section { text-align: center; padding: 3.5rem 2rem; background: var(--accent); border-radius: 16px; margin: 2rem auto; }
+.cta-section h2 { font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: #fff; margin-bottom: 1rem; }
+.cta-section p { color: rgba(255,255,255,0.95); margin-bottom: 2rem; max-width: 55ch; margin-left: auto; margin-right: auto; }
+.cta-section .btn-primary { background: #fff; color: var(--accent); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+.cta-section .btn-primary:hover { background: #f5f5f5; }
 
-.emergency-cta {
-  background: linear-gradient(135deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 80%, #000) 100%);
-  color: #000;
-  text-align: center;
-  padding: 3rem 2rem;
-  border-radius: 16px;
-  margin: 2rem auto;
-  max-width: 1200px;
-}
-.emergency-cta h2 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  margin-bottom: 1rem;
-}
-.emergency-cta a {
-  color: #000;
-  font-weight: 700;
-  text-decoration: underline;
-  font-size: 1.2rem;
-}
-
-footer {
-  padding: 2rem;
-  text-align: center;
-  opacity: 0.7;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-footer a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-  header { flex-direction: column; gap: 1rem; padding: 1rem; }
-  nav { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-  nav a { margin: 0; }
-  .hero { padding: 5rem 1rem 3rem; }
-  .stats-bar { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 480px) {
-  .stats-bar { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: 1fr; }
-}
+footer { background: #064e3b; color: #a7f3d0; padding: 3.5rem clamp(1.5rem, 4vw, 3rem) 2rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; max-width: 1200px; margin: 0 auto 2.5rem; }
+@media (max-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer-brand .logo { display: block; margin-bottom: 1rem; color: #fff; }
+.footer-brand p { color: #a7f3d0; font-size: 0.9rem; line-height: 1.7; max-width: 280px; }
+.footer-column h5 { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6ee7b7; margin-bottom: 1.25rem; }
+.footer-column ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-column a { color: #a7f3d0; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.footer-column a:hover { color: #fff; }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem; }
+.footer-bottom a { color: #a7f3d0; text-decoration: none; transition: color 0.2s; }
+.footer-bottom a:hover { color: #fff; }
 </style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <header role="banner">
-  <div class="logo" aria-label="TemperaturePro Austin">TemperaturePro Austin</div>
+  <div class="logo">TemperaturePro</div>
   <nav role="navigation" aria-label="Main navigation">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
-  <a href="tel:(512) 567-8901" class="phone-cta" aria-label="Call (512) 567-8901">(512) 567-8901</a>
+  <a href="tel:+15123458400" class="phone-cta" aria-label="Call (512) 345-8400">(512) 345-8400</a>
 </header>
 
 <main id="main">
   <section id="home" class="hero" aria-labelledby="hero-title">
     <div class="hero-content">
-      <h1 id="hero-title">Efficiency You Can Trust</h1>
-      <p>Energy Star partner offering financing, tax credits, and free consultations.</p>
+      <div class="hero-badge">Energy Star Partner</div>
+      <h1 id="hero-title">Efficiency You Can <span>Trust</span></h1>
+      <p>Lower your bills with smart HVAC solutions. Smart thermostats, energy audits, and high-efficiency systems — backed by Energy Star partnership.</p>
       <div class="cta-group">
-        <a href="#contact" class="btn-primary" role="button">Schedule Service</a>
-        <a href="tel:(512) 567-8901" class="btn-secondary">Call Now</a>
+        <a href="#contact" class="btn-primary">Get a Free Consultation</a>
+        <a href="tel:+15123458400" class="btn-secondary">Call Now</a>
       </div>
     </div>
   </section>
 
-  <section aria-label="Trust indicators">
+  <section aria-label="Trust indicators" class="stats-section">
     <div class="stats-bar">
-      <div class="stat">
-        <div class="stat-value">4.7 ★</div>
-        <div class="stat-label">200+ Google Reviews</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">6+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">Energy Star</div>
-        <div class="stat-label">Certified Team</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">NATE</div>
-        <div class="stat-label">Licensed & Insured</div>
-      </div>
+      <div class="stat"><div class="stat-value">4.7</div><div class="stat-label">Google Rating</div></div>
+      <div class="stat"><div class="stat-value">200+</div><div class="stat-label">Verified Reviews</div></div>
+      <div class="stat"><div class="stat-value">6+</div><div class="stat-label">Years in Austin</div></div>
+      <div class="stat"><div class="stat-value">ES</div><div class="stat-label">Energy Star Partner</div></div>
     </div>
   </section>
 
   <section id="services" aria-labelledby="services-title">
-    <h2 id="services-title" class="section-title">Our Services</h2>
+    <div class="section-header">
+      <span class="section-label">Our Services</span>
+      <h2 id="services-title" class="section-title">Smart Comfort Solutions</h2>
+    </div>
     <div class="services-grid">
-      <article class="service-card">
-        <div class="service-icon" aria-hidden="true">🔧</div>
-        <h3>AC Installation</h3>
-        <p>Professional AC Installation services by certified technicians. Fast, reliable, and guaranteed.</p>
-      </article>
-      <article class="service-card">
-        <div class="service-icon" aria-hidden="true">❄️</div>
-        <h3>Heating Installation</h3>
-        <p>Expert Heating Installation for homes and businesses. Quality workmanship you can count on.</p>
-      </article>
-      <article class="service-card">
-        <div class="service-icon" aria-hidden="true">🔥</div>
-        <h3>Smart Thermostats</h3>
-        <p>Comprehensive Smart Thermostats solutions. Keeping your home comfortable year-round.</p>
-      </article>
-      <article class="service-card">
-        <div class="service-icon" aria-hidden="true">🛡️</div>
-        <h3>Energy Audits</h3>
-        <p>Proactive Energy Audits plans to prevent breakdowns and extend system life.</p>
-      </article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true">❄️</div><h3>AC Install & Replacement</h3><p>High-efficiency systems that cut cooling costs up to 50%. We size your system precisely for your home's needs.</p></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true">🔥</div><h3>Heating Install</h3><p>Modern heat pumps and furnaces with Energy Star ratings. Stay warm efficiently through Austin winters.</p></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true">🌡️</div><h3>Smart Thermostats</h3><p>Upgrade to intelligent climate control. Learn your schedule, adjust remotely, and track energy savings in real time.</p></article>
+      <article class="service-card"><div class="service-icon" aria-hidden="true">📊</div><h3>Energy Audits</h3><p>Comprehensive home energy assessment. Find where you're losing money and get a prioritized improvement plan.</p></article>
     </div>
   </section>
 
-  <section aria-labelledby="why-title">
-    <h2 id="why-title" class="section-title">Why Choose TemperaturePro Austin</h2>
-    <div class="highlights">
-      <div class="highlight">
-        <div class="highlight-icon" aria-hidden="true">✅</div>
-        <h4>Energy Star Partner</h4>
-        <p>We deliver on our promises every time.</p>
-      </div>
-      <div class="highlight">
-        <div class="highlight-icon" aria-hidden="true">💰</div>
-        <h4>Financing Available</h4>
-        <p>Transparent pricing with no surprises.</p>
-      </div>
-      <div class="highlight">
-        <div class="highlight-icon" aria-hidden="true">⚡</div>
-        <h4>Free Consultations</h4>
-        <p>Fast response times when you need us most.</p>
-      </div>
-      <div class="highlight">
-        <div class="highlight-icon" aria-hidden="true">🏆</div>
-        <h4>Tax Credits</h4>
-        <p>Industry-leading expertise and certification.</p>
-      </div>
+  <section id="about" aria-labelledby="about-title" class="why-choose">
+    <div class="section-header">
+      <span class="section-label">Why TemperaturePro</span>
+      <h2 id="about-title" class="section-title">Smarter HVAC, Lower Bills</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><div class="why-icon" aria-hidden="true">⭐</div><h4>Energy Star Partner</h4><p>Certified by the EPA. We meet rigorous efficiency standards that most contractors don't even qualify for.</p></div>
+      <div class="why-item"><div class="why-icon" aria-hidden="true">💰</div><h4>Save on Energy Bills</h4><p>Our high-efficiency systems average 30-50% savings on heating and cooling costs. Most customers see ROI within 3 years.</p></div>
+      <div class="why-item"><div class="why-icon" aria-hidden="true">📋</div><h4>Free Consultations</h4><p>No obligation, no pressure. We assess your home, explain your options clearly, and let you decide.</p></div>
+      <div class="why-item"><div class="why-icon" aria-hidden="true">🏛️</div><h4>Tax Credits Available</h4><p>Federal and local incentives can offset 25-30% of system cost. We handle the paperwork.</p></div>
     </div>
   </section>
 
-  <section aria-labelledby="about-title">
-    <h2 id="about-title" class="section-title">About TemperaturePro Austin</h2>
-    <div class="why-us">
-      <div class="why-item">
-        <div class="icon" aria-hidden="true">👨‍🔧</div>
-        <h4>Expert Technicians</h4>
-        <p>Our team is fully licensed, NATE-certified, and trained on the latest HVAC systems.</p>
-      </div>
-      <div class="why-item">
-        <div class="icon" aria-hidden="true">🤝</div>
-        <h4>Trusted Service</h4>
-        <p>4.7 star rating from 200+ verified reviews. Our customers recommend us.</p>
-      </div>
-      <div class="why-item">
-        <div class="icon" aria-hidden="true">🔒</div>
-        <h4>Guaranteed Work</h4>
-        <p>Every job comes with our satisfaction guarantee and warranty protection.</p>
-      </div>
-    </div>
+  <section class="savings-teaser" aria-labelledby="savings-title">
+    <h2 id="savings-title">See Your Potential Savings</h2>
+    <p>An energy audit shows exactly where your money goes. Most Austin homes waste 20-35% on inefficient HVAC. Find your leak.</p>
+    <a href="#contact" class="btn-primary">Get Your Free Consultation</a>
+  </section>
+
+  <section class="cta-section" aria-labelledby="cta-title">
+    <h2 id="cta-title">Ready for Efficient Comfort?</h2>
+    <p>Get a free consultation and discover how much you could save with an Energy Star-rated system.</p>
+    <a href="#contact" class="btn-primary">Get Started Today</a>
   </section>
 
   <section id="contact" aria-labelledby="contact-title">
-    <h2 id="contact-title" class="section-title">Contact Us</h2>
-    <div class="contact-section">
-      <form class="contact-form" action="mailto:info@temperaturepro.com" method="post" enctype="text/plain">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <p style="text-align: center; margin-top: 1.5rem; opacity: 0.8;">
-        Or call us directly at <a href="tel:(512) 567-8901" style="color: var(--accent);">(512) 567-8901</a>
-      </p>
+    <div class="section-header">
+      <span class="section-label">Contact</span>
+      <h2 id="contact-title" class="section-title">Free Consultation</h2>
     </div>
-  </section>
-
-  <section aria-label="Call to action">
-    <div class="emergency-cta">
-      <h2>Get a Free Consultation</h2>
-      <p style="margin-bottom: 1.5rem; opacity: 0.9;">Call now for immediate assistance</p>
-      <a href="tel:(512) 567-8901" class="btn-primary">(512) 567-8901</a>
+    <div style="max-width: 600px; margin: 0 auto;">
+      <form action="mailto:info@temperaturepro.com" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div><label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Name</label><input type="text" id="name" name="name" required style="width: 100%; padding: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: inherit; font-size: 1rem;"></div>
+        <div><label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email</label><input type="email" id="email" name="email" required style="width: 100%; padding: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: inherit; font-size: 1rem;"></div>
+        <div><label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Phone</label><input type="tel" id="phone" name="phone" style="width: 100%; padding: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: inherit; font-size: 1rem;"></div>
+        <div><label for="service" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Interested in</label><select id="service" name="service" style="width: 100%; padding: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: inherit; font-size: 1rem;"><option>AC Install</option><option>Heating Install</option><option>Smart Thermostat</option><option>Energy Audit</option><option>Other</option></select></div>
+        <div><label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message (optional)</label><textarea id="message" name="message" rows="4" style="width: 100%; padding: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: inherit; font-size: 1rem; resize: vertical;"></textarea></div>
+        <button type="submit" class="btn-primary" style="width: 100%;">Request Consultation</button>
+      </form>
     </div>
   </section>
 </main>
 
 <footer role="contentinfo">
-  <p>© 2026 TemperaturePro Austin. Serving Austin, TX and surrounding areas.</p>
-  <p style="margin-top: 0.5rem;">
-    <a href="mailto:info@temperaturepro.com">info@temperaturepro.com</a> |
-    <a href="#privacy">Privacy Policy</a>
-  </p>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo">TemperaturePro</span>
+      <p>Energy Star Partner HVAC. Smart thermostats, energy audits, and high-efficiency systems for Austin homes.</p>
+    </div>
+    <div class="footer-column"><h5>Services</h5><ul><li><a href="#services">AC Install</a></li><li><a href="#services">Heating Install</a></li><li><a href="#services">Smart Thermostats</a></li><li><a href="#services">Energy Audits</a></li></ul></div>
+    <div class="footer-column"><h5>Company</h5><ul><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+    <div class="footer-column"><h5>Contact</h5><ul><li><a href="tel:+15123458400">(512) 345-8400</a></li><li><a href="mailto:info@temperaturepro.com">info@temperaturepro.com</a></li><li>Austin, TX</a></li><li>Free Consultations</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 TemperaturePro Austin. All rights reserved.</p></div>
 </footer>
 </body>
 </html>
